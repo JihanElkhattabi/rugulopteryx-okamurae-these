@@ -1,0 +1,45 @@
+# Fichiers systeme
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Fichiers temporaires et de sauvegarde
+*.tmp
+*.bak
+*.swp
+*~
+*.log
+
+# Fichiers de compilation LaTeX
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.synctex.gz
+*.toc
+*.lof
+*.lot
+*.bcf
+*.run.xml
+
+# Donnees brutes volumineuses (a deposer sur un entrepot dedie : Zenodo / Nakala)
+data/raw/*.fastq
+data/raw/*.bam
+data/raw/*.raw
+
+# Informations sensibles (identifiants, cles API)
+.env
+*.key
+secrets/
+
+# Dossiers virtuels Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Sorties R
+.Rhistory
+.RData
