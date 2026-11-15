@@ -56,13 +56,16 @@ Les 22 références bibliographiques ont été vérifiées le **15/11/2026** via
 Aucune rétractation (*retraction*) ni expression de préoccupation (*expression of concern*)
 n'a été identifiée pour l'une quelconque des références incluses.
 
-## 5. Historique des commits (extrait)
+## 5. Historique des commits
 
 ```
-* a3f2c10 (HEAD -> main) Ajout de la charte IA et finalisation du PGD
-* 7b9e0d2 Structuration arborescence + references.bib (22 refs)
-* c1d4a08 Initialisation du depot - README et LICENSE
+* 17febc1 (HEAD -> main) Ajout du Plan de Gestion des Donnees (PGD) dans docs/
+* 7c79f29 Ajout de la charte personnelle d'usage de l'IA (activite 2)
+* 2cfa4e4 Structuration arborescence (data, scripts) + references.bib (22 refs)
+* aeced97 Initialisation du depot - README, LICENSE et .gitignore
 ```
+
+Soit 4 commits significatifs sur la branche `main`.
 
 ## 6. Licence
 
