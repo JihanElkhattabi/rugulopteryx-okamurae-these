@@ -27,16 +27,23 @@ caractériser son profil phytochimique et à évaluer le potentiel bioactif de s
 rugulopteryx-okamurae-these/
 ├── README.md                  # Ce fichier — présentation et arborescence
 ├── LICENSE                    # Licence CC-BY-4.0 (contenus) + MIT (scripts)
+├── CITATION.cff               # Métadonnées de citation ( Zenodo / GitHub)
 ├── .gitignore                 # Fichiers exclus du versionnement
 ├── references.bib             # Bibliographie Zotero exportée (22 références)
 ├── Charte_IA.md               # Charte personnelle d'usage de l'IA (½ page)
 ├── docs/
-│   ├── PGD_Rugulopteryx_okamurae.pdf   # Plan de gestion des données (2 pages)
+│   ├── PGD_Rugulopteryx_okamurae.pdf      # Plan de gestion des données (2 pages)
 │   └── Rapport_Ecosysteme_Numerique_These.pdf  # Rapport final du mini-projet
 ├── data/
-│   └── README.md              # Description des jeux de données bruts/traits
-└── scripts/
-    └── README.md              # Scripts d'analyse phytochimique (à venir)
+│   ├── README.md              # Description des jeux de données
+│   └── exemple_metabolites.csv # Jeu d'exemple (métabolites, illustratif)
+├── scripts/
+│   ├── README.md              # Description des scripts
+│   └── analyse_phytochimique.py # Script d'exemple (stats + figure)
+└── results/
+    ├── README.md              # Description des sorties
+    ├── statistiques_par_classe.csv  # Sortie du script (exemple)
+    └── aire_pic_par_compose.png      # Figure (exemple)
 ```
 
 ## 3. Contenu des livrables
@@ -59,13 +66,15 @@ n'a été identifiée pour l'une quelconque des références incluses.
 ## 5. Historique des commits
 
 ```
-* 17febc1 (HEAD -> main) Ajout du Plan de Gestion des Donnees (PGD) dans docs/
+* dcbb110 (HEAD -> main) Fichiers d'exemple (data CSV, script, results) + CITATION.cff
+* 43bc509 Ajout du rapport final dans docs/ + mise a jour du README
+* 17febc1 Ajout du Plan de Gestion des Donnees (PGD) dans docs/
 * 7c79f29 Ajout de la charte personnelle d'usage de l'IA (activite 2)
 * 2cfa4e4 Structuration arborescence (data, scripts) + references.bib (22 refs)
 * aeced97 Initialisation du depot - README, LICENSE et .gitignore
 ```
 
-Soit 4 commits significatifs sur la branche `main`.
+Soit 6 commits significatifs sur la branche `main`.
 
 ## 6. Licence
 
