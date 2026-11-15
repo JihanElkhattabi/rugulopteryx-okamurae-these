@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "Si vous utilisez ce depot ou les donnees/qu'il contient, merci de le citer comme suit."
+title: "Ecosysteme numerique de these - Etude phytochimique de Rugulopteryx okamurae dans la Mediterranee marocaine"
+authors:
+  - family-names: El-khattabi
+    given-names: Jihan
+    orcid: "https://orcid.org/0009-0002-7946-4934"
+    affiliation: "Laboratoire de Biologie, Ecologie et Sante (LBECS)"
+type: software
+version: "1.0.0"
+date-released: "2026-11-15"
+license: CC-BY-4.0
+license-url: "https://creativecommons.org/licenses/by/4.0/"
+repository-code: "https://github.com/JihanElkhattabi/rugulopteryx-okamurae-these"
+keywords:
+  - phytochimie
+  - macroalgues
+  - Rugulopteryx okamurae
+  - espece invasive
+  - Mediterranee marocaine
+  - science ouverte
+abstract: >-
+  Depot accompagnant la these de doctorat portant sur l'etude phytochimique
+  de l'algue brune invasive Rugulopteryx okamurae dans la Mediterranee
+  marocaine. Contient la bibliographie (references.bib), le plan de gestion
+  des donnees (PGD), la charte d'usage de l'IA, des scripts d'analyse
+  exemple et le rapport de l'ecosysteme numerique de these.

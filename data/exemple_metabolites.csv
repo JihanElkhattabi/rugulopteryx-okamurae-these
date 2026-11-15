@@ -1,0 +1,28 @@
+compound,class,retention_time_min,peak_area,site
+Rugukadiol A,Diterpenoid,12.4,18450,Tetouan
+Rugukamural A,Diterpenoid,15.1,9320,Tetouan
+Rugukamural B,Diterpenoid,16.8,7140,Tetouan
+Rugukamural C,Diterpenoid,18.2,5680,Tetouan
+Ruguloptone A,Diterpenoid,21.5,12100,Tetouan
+Ruguloptone B,Diterpenoid,22.9,8760,Tetouan
+Ruguloptone C,Diterpenoid,24.3,6420,Tetouan
+Ruguloptone D,Diterpenoid,26.1,4980,Tetouan
+Ruguloptone E,Diterpenoid,27.8,3720,Tetouan
+Ruguloptone F,Diterpenoid,29.4,2140,Tetouan
+Phloroglucinol,Phlorotannin,4.2,25800,Tetouan
+Eckol,Phlorotannin,6.7,14300,Tetouan
+Fucophlorethol,Phlorotannin,8.9,9100,Tetouan
+Palmitic acid,Fatty acid,31.2,31200,Tetouan
+Oleic acid,Fatty acid,33.5,18700,Tetouan
+Linoleic acid,Fatty acid,35.1,12400,Tetouan
+Alpha-linolenic acid,Fatty acid,37.8,22100,Tetouan
+Stearic acid,Fatty acid,39.2,6800,Tetouan
+Rugukadiol A,Diterpenoid,12.4,16200,Al_Hoceima
+Rugukamural A,Diterpenoid,15.1,8100,Al_Hoceima
+Ruguloptone A,Diterpenoid,21.5,9800,Al_Hoceima
+Ruguloptone B,Diterpenoid,22.9,7400,Al_Hoceima
+Phloroglucinol,Phlorotannin,4.2,22100,Al_Hoceima
+Eckol,Phlorotannin,6.7,11800,Al_Hoceima
+Palmitic acid,Fatty acid,31.2,27800,Al_Hoceima
+Oleic acid,Fatty acid,33.5,15600,Al_Hoceima
+Alpha-linolenic acid,Fatty acid,37.8,18900,Al_Hoceima
