@@ -1,0 +1,114 @@
+\documentclass[11pt,a4paper]{article}
+
+% Tectonic = moteur XeTeX : UTF-8 natif, pas besoin de inputenc/fontenc T1
+\usepackage[french]{babel}
+\usepackage[a4paper, top=2.0cm, bottom=2.0cm, left=2.2cm, right=2.2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{tcolorbox}
+\usepackage[hidelinks,
+    pdftitle={Plan de gestion des donnees - Rugulopteryx okamurae},
+    pdfauthor={Jihan El-khattabi},
+    pdfsubject={PGD / DMP OPIDoR - These de doctorat},
+    pdfkeywords={PGD, DMP, OPIDoR, Rugulopteryx okamurae, phytochimie}
+]{hyperref}
+
+% Style des titres
+\definecolor{accent}{HTML}{1F4E79}
+\titleformat{\section}{\color{accent}\large\bfseries}{\thesection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{8pt}{4pt}
+\setlist[itemize]{leftmargin=1.2em, itemsep=2pt, topsep=2pt}
+\setlength{\parskip}{3pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{2em}  % evite les overfull hbox sur les tokens \texttt
+
+\begin{document}
+
+% En-tete
+\begin{center}
+{\color{accent}\Large\bfseries Plan de gestion des données (PGD)}\\[2pt]
+{\large\itshape Étude phytochimique de \textit{Rugulopteryx okamurae} dans la Méditerranée marocaine}\\[4pt]
+\rule{0.95\linewidth}{0.4pt}\\[2pt]
+\textbf{Modèle :} DMP OPIDoR (\url{https://dmp.opidor.fr}) -- format DMPRoadmap\\
+\textbf{Doctorante :} Jihan El-khattabi \quad|\quad \textbf{ORCID :} \url{https://orcid.org/0009-0002-7946-4934}\\
+\textbf{Laboratoire :} Biologie, Écologie et Santé (LBECS) \quad|\quad \textbf{Date :} 15/11/2026
+\end{center}
+
+\vspace{2pt}
+
+\section*{1. Description des données collectées et produites}
+La thèse génère plusieurs types de données issues de l'étude phytochimique de
+\textit{Rugulopteryx okamurae}, prélevée sur la côte méditerranéenne marocaine
+(détroit de Gibraltar et mer d'Alboran). Les données se répartissent en trois
+ensembles : (i)~\textbf{données d'échantillonnage} -- fiches de terrain géoréférencées
+(lat/lon GPS), date, profondeur, photographies des thalles ; (ii)~\textbf{données
+analytiques} -- chromatogrammes HPLC-DAD, spectres de masse (HR-ESI-MS), spectres
+RMN \textsuperscript{1}H et \textsuperscript{13}C, données d'activité biologique
+(anti-inflammatoire, antioxydante) ; (iii)~\textbf{données dérivées} -- tables
+d'identification des métabolites, structures chimiques, figures et cartes de
+distribution. Le volume estimé est de l'ordre de 5 à 15~Go (essentiellement des
+spectres RMN bruts en format FID), avec un volume réduit de tables traitées ($<$~50~Mo).
+
+\section*{2. Normes, formats et métadonnées}
+Les données brutes seront conservées dans leurs formats natifs : FID/ProcNMR
+(Bruker), \texttt{.lcd}/\texttt{.lcdx} (HPLC Shimadzu), \texttt{.raw}/\texttt{.mzML}
+pour la spectrométrie de masse, et \texttt{.csv} pour les tables. Les métadonnées
+respecteront le standard \textbf{Darwin Core} pour les occurrences biologiques
+(géoréférencement, identifiant taxonomique AlgaeBase) et le modèle \textbf{ISA-Tab}
+pour les données métabolomiques. Chaque fichier sera documenté par un fichier
+\texttt{README} compagnon décrivant l'auteur, la date, le protocole et les unités.
+La nomenclature des fichiers suivra le schéma
+\texttt{RO\_site\_date\_type\_n}, par exemple \texttt{RO\_Tetouan\_RMN\_001}.
+
+\section*{3. Stockage, sécurité et sauvegarde}
+\begin{itemize}
+  \item \textbf{Stockage actif :} disque du laboratoire (serveur NAS, sauvegarde
+        nocturne automatique) ; double local de travail sur disque dur externe chiffré.
+  \item \textbf{Versionnement :} le code et les tables traitées sont versionnés dans
+        le dépôt Git (\url{https://github.com/JihanElkhattabi/rugulopteryx-okamurae-these}),
+        branche \texttt{main}, avec étiquettes de version (\texttt{v0.1}, \texttt{v1.0}).
+  \item \textbf{Sécurité :} données sensibles (localisation précise des sites de
+        prélèvement en cas de risque de biopiraterie) chiffrées (AES-256) ; accès
+        restreint à la doctorante et au directeur de thèse.
+  \item \textbf{Redondance :} règle 3-2-1 (3 copies, 2 supports, 1 hors site).
+\end{itemize}
+
+\section*{4. Partage, accès et dépôt long terme}
+Après publication des résultats, les données seront déposées dans un entrepôt
+\textbf{Nakala} (Huma-Num) pour les métadonnées et figures, et \textbf{Zenodo}
+pour les données analytiques volumineuses, avec un DOI persistant. Les données
+seront ouvertes sous licence \textbf{CC-BY-4.0}, dès l'acceptation des articles
+associés, conformément à la politique de science ouverte du HCERES et au Plan
+National pour la Science Ouverte. Un embargo maximum de 12~mois peut s'appliquer
+aux données soumises à brevet ou à confidentialité industrielle (valorisation).
+Les références bibliographiques sont partagées via la \textbf{bibliothèque Zotero}
+de groupe publique.
+
+\section*{5. Éthique, conformité légale et droits}
+Les prélèvements d'algues sont réalisés dans le respect du \textbf{Code de la pêche
+maritime} (loi n°~19-12) et des autorisations du Département de la Pêche Maritime ;
+les zones protégées (parc national d'Al Hoceima) requièrent une autorisation du Haut
+Commissariat aux Eaux et Forêts. Aucune donnée à caractère personnel n'est collectée,
+hormis le consentement des partenaires de terrain. Les droits de propriété
+intellectuelle appartiennent à l'université d'attache ; l'auteure conserve les droits
+moraux. La citation de l'espèce suit Hwang, Lee \& Kim (2009) et Verlaque \textit{et al.} (2009).
+
+\section*{6. Responsabilités et cycle de vie}
+\begin{tabularx}{\linewidth}{lX}
+\toprule
+\textbf{Rôle} & \textbf{Responsabilité} \\
+\midrule
+Doctorante (J. El-khattabi) & Collecte, traitement, documentation, dépôt, charte IA \\
+Directeur de thèse & Validation scientifique, autorisation de dépôt \\
+Référent données du laboratoire & Conseil sur les standards, archivage Nakala/Zenodo \\
+\bottomrule
+\end{tabularx}\\[2pt]
+Le cycle de vie prévu : collecte (2026-2027) $\rightarrow$ traitement (2027-2028)
+$\rightarrow$ publication et dépôt (2028-2029) $\rightarrow$ archivage long terme
+(min.~10~ans). Une révision annuelle du PGD est prévue pour intégrer les nouveaux
+jeux de données et les outils du laboratoire.
+
+\end{document}
