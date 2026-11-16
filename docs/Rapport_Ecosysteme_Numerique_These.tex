@@ -1,0 +1,320 @@
+\documentclass[11pt,a4paper]{article}
+
+% Tectonic = moteur XeTeX : UTF-8 natif, polices Latin Modern par defaut
+\usepackage[french]{babel}
+\usepackage[a4paper, top=2.2cm, bottom=2.0cm, left=2.2cm, right=2.2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{tcolorbox}
+\usepackage{fancyhdr}
+
+\definecolor{accent}{HTML}{1F4E79}
+\definecolor{accent2}{HTML}{2E7D32}
+\definecolor{soft}{HTML}{EAF1F8}
+\definecolor{linkblue}{HTML}{1565C0}
+
+% Liens cliquables colores
+\usepackage[colorlinks=true, linkcolor=accent, citecolor=accent2,
+    urlcolor=linkblue, bookmarks=true, bookmarksnumbered=true, unicode=true,
+    pdftitle={Mon ecosysteme numerique de these - Rugulopteryx okamurae},
+    pdfauthor={Jihan El-khattabi},
+    pdfsubject={Mini-projet Module 5 - Formation doctorale},
+    pdfkeywords={ecosysteme numerique, ORCID, Zotero, PGD, Git, IA, Rugulopteryx okamurae}
+]{hyperref}
+
+% En-tete / pied de page
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{14pt}
+\fancyhead[L]{\small\color{accent}\textbf{Mon écosystème numérique de thèse}}
+\fancyhead[R]{\small\color{accent}Jihan El-khattabi -- LBECS}
+\fancyfoot[C]{\small\thepage\,/\,\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{\color{accent}\hrule width\headwidth height\headrulewidth}
+
+% Style des sections
+\titleformat{\section}{\color{accent}\large\bfseries}{\thesection.}{0.5em}{}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
+\titleformat{\subsection}{\color{accent2}\normalsize\bfseries}{\thesubsection}{0.5em}{}
+\setlist[itemize]{leftmargin=1.3em, itemsep=2pt, topsep=2pt}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{2em}
+
+% Boite de lien pour les livrables
+\newtcolorbox{lienbox}[1]{%
+  colback=soft, colframe=accent, boxrule=0.4pt, arc=2pt,
+  left=6pt, right=6pt, top=3pt, bottom=3pt,
+  before skip=4pt, after skip=6pt,
+  fonttitle=\bfseries\color{accent}, title={#1}}
+
+\begin{document}
+
+% ===================== TITRE =====================
+\begin{center}
+{\color{accent}\Large\bfseries Mon écosystème numérique de thèse}\\[3pt]
+{\large\itshape Mini-projet -- Module 5 «~Transformation numérique et recherche scientifique~»}\\[6pt]
+{\color{accent2}\textbf{Thèse :} Étude phytochimique de \textit{Rugulopteryx okamurae} dans la Méditerranée marocaine}\\[4pt]
+\rule{0.97\linewidth}{0.6pt}\\[3pt]
+\small
+\textbf{Doctorante :} Jihan El-khattabi \quad|\quad
+\textbf{ORCID :} \href{https://orcid.org/0009-0002-7946-4934}{0009-0002-7946-4934}\\
+\textbf{Laboratoire :} Biologie, Écologie et Santé (LBECS) \quad|\quad
+\textbf{Date :} 15 novembre 2026
+\end{center}
+\vspace{2pt}
+
+% ===================== SYNTHESE DES LIVRABLES =====================
+\begin{lienbox}{Vue d'ensemble des livrables}
+\renewcommand{\arraystretch}{1.15}
+\begin{tabularx}{\linewidth}{@{}l l >{\raggedright\arraybackslash}X@{}}
+\toprule
+\textbf{N\textsuperscript{o}} & \textbf{Livrable} & \textbf{Lien} \\
+\midrule
+1 & Identité (ORCID) & \href{https://orcid.org/0009-0002-7946-4934}{orcid.org/0009-0002-7946-4934} \\
+2 & Bibliothèque Zotero & \href{https://github.com/JihanElkhattabi/rugulopteryx-okamurae-these/blob/main/references.bib}{references.bib (22 réf.)} \\
+3 & Plan de gestion des données & \href{https://github.com/JihanElkhattabi/rugulopteryx-okamurae-these/blob/main/docs/PGD_Rugulopteryx_okamurae.pdf}{PGD (2 pages, OPIDoR)} \\
+4 & Dépôt Git & \href{https://github.com/JihanElkhattabi/rugulopteryx-okamurae-these}{github.com/JihanElkhattabi/rugulopteryx-okamurae-these} \\
+5 & Charte IA & \href{https://github.com/JihanElkhattabi/rugulopteryx-okamurae-these/blob/main/Charte_IA.md}{Charte\_IA.md} \\
+\bottomrule
+\end{tabularx}
+\end{lienbox}
+
+% ===================== INTRODUCTION =====================
+\section{Introduction}
+La transformation numérique bouleverse les pratiques de la recherche scientifique et
+impose à chaque doctorant de construire un \textbf{écosystème numérique} cohérent, où
+chaque outil -- identifiant persistant, gestionnaire de références, plan de gestion
+des données, contrôle de version et usage responsable de l'intelligence artificielle --
+s'articule avec les autres pour garantir la traçabilité, la reproductibilité et
+l'ouverture des résultats. Ce mini-projet, réalisé dans le cadre du Module~5 de la
+formation doctorale, a précisément pour objectif de mettre en place cet écosystème
+autour d'un sujet de thèse concret.
+
+Ma thèse porte sur l'\textbf{étude phytochimique de \textit{Rugulopteryx okamurae}}
+(E.Y.~Dawson) I.K.~Hwang, W.J.~Lee \& H.S.~Kim (Dictyotales, Ochrophyta), une algue
+brune originaire du Pacifique Nord-Ouest dont l'invasion massive de la Méditerranée --
+et particulièrement des côtes marocaines -- depuis 2015 menace la biodiversité
+marine et les activités côtières. L'enjeu scientifique est double : caractériser le
+profil métabolique de cette espèce (diterpénoïdes, phlorotannines, acides gras) et
+évaluer le potentiel bioactif de ses extraits, dans une logique de valorisation de
+cette biomasse invasive. Ce contexte impose une rigueur numérique particulière :
+gestion fine de données analytiques volumineuses (spectres RMN, chromatogrammes),
+bibliographie très mobilisée sur un sujet récent et en rapide expansion, et
+transparence sur le recours aux outils d'IA générative.
+
+Le présent rapport décrit les cinq livrables demandés (Slide~38), présente les
+choix techniques retenus et fournit, pour chacun, un lien cliquable vers la
+production correspondante.
+
+% ===================== LIVRABLE 1 =====================
+\section{Livrable 1 -- Identité : profil ORCID}
+\begin{lienbox}{Lien du livrable}
+\href{https://orcid.org/0009-0002-7946-4934}{https://orcid.org/0009-0002-7946-4934}
+\end{lienbox}
+
+L'identifiant ORCID (\textit{Open Researcher and Contributor ID}) constitue la
+pierre angulaire de l'écosystème numérique : il associe de manière pérenne et
+non ambiguë l'ensemble de mes productions scientifiques à mon identité, indépendamment
+des homonymies et des changements d'affiliation. Mon profil
+(\texttt{0009-0002-7946-4934}) a été créé puis complété dans l'interface
+\url{https://orcid.org}. Il rassemble quatre rubriques essentielles :
+
+\begin{itemize}
+  \item \textbf{Biographie :} nom (Jihan El-khattabi), prénom, pays (Maroc) et mots-clés
+        de recherche (phytochimie, macroalgues, espèces invasives).
+  \item \textbf{Distinctions / éducation :} inscription en doctorat, formation
+        universitaire et formations doctorales suivies (dont le Module~5).
+  \item \textbf{Emploi :} affiliation actuelle au Laboratoire de Biologie, Écologie et
+        Santé (LBECS).
+  \item \textbf{Travaux :} section destinée à recevoir les publications, jeux de
+        données et prépublications à mesure de leur parution, avec lien automatique
+        vers CrossRef et DataCite.
+\end{itemize}
+
+La visibilité du profil ORCID est renforcée par son interopérabilité : il sera
+systématiquement demandé lors des soumissions d'articles, des dépôts sur Zenodo/Nakala
+et des demandes de financement. C'est l'identifiant unique qui relie entre eux tous
+les autres composants de l'écosystème décrits ci-après.
+
+% ===================== LIVRABLE 2 =====================
+\section{Livrable 2 -- Bibliothèque Zotero}
+\begin{lienbox}{Lien du livrable}
+Export BibTeX (22 références) :
+\href{https://github.com/JihanElkhattabi/rugulopteryx-okamurae-these/blob/main/references.bib}{references.bib}\\
+Bibliothèque Zotero de groupe :
+\href{https://www.zotero.org/groups/5549873/rugulopteryx_okamurae}{zotero.org/groups/5549873/rugulopteryx\_okamurae}
+\end{lienbox}
+
+J'ai constitué dans \textbf{Zotero} une bibliothèque de \textbf{22 références}
+couvrant l'ensemble des dimensions du sujet, puis je l'ai exportée au format
+\texttt{.bib} pour un usage direct avec LaTeX. Les références sont organisées par
+\textbf{mots-clés thématiques}, ce qui permet un filtrage rapide dans l'interface
+Zotero comme dans le fichier exporté :
+
+\begin{itemize}
+  \item \textit{Taxonomie \& systématique} -- Verlaque \textit{et al.} (2009), Hwang \textit{et al.} (2009) ;
+  \item \textit{Écologie de l'invasion} (détroit de Gibraltar, Méditerranée) -- García-Gómez \textit{et al.} (2020), Altamirano \textit{et al.} (2021), Ruitton \textit{et al.} (2021), Laamraoui \textit{et al.} (2024) ;
+  \item \textit{Invasion au Maroc} -- El~Aamri \textit{et al.} (2020), El~Madany \textit{et al.} (2024) ;
+  \item \textit{Autres signalements méditerranéens} -- Bottalico \textit{et al.} (2024), Bellissimo \textit{et al.} (2024), Estévez \textit{et al.} (2022) ;
+  \item \textit{Dynamique \& évaluation} -- Rosas-Guerrero \textit{et al.} (2025), Román \textit{et al.} (2025) ;
+  \item \textit{Phytochimie \& bioactifs} -- Cuevas \textit{et al.} (2021, 2023), García-Cervantes \textit{et al.} (2025), Barcellos \textit{et al.} (2024) ;
+  \item \textit{Valorisation \& bioraffinerie} -- De la Lama-Calvente \textit{et al.} (2024), Belhadj \textit{et al.} (2024), Trentin \textit{et al.} (2026) ;
+  \item \textit{Gestion \& risques} -- Tsiriga \textit{et al.} (2024), Sempere-Valverde \textit{et al.} (2018).
+\end{itemize}
+
+\textbf{Vérification des rétractations.} Chaque référence a été contrôlée le
+15/11/2026 via \href{https://www.crossref.org}{Crossref} (statut de l'identifiant DOI)
+et la base \href{https://retractionwatch.com}{Retraction Watch}. Aucune rétractation
+(\textit{retraction}) ni expression de préoccupation (\textit{expression of concern})
+n'a été identifiée. Les métadonnées (auteurs, année, volume, DOI) ont été vérifiées
+au moins au niveau du DOI pour les articles centraux (Cuevas \textit{et al.}, 2021 ;
+Verlaque \textit{et al.}, 2009).
+
+% ===================== LIVRABLE 3 =====================
+\section{Livrable 3 -- Plan de gestion des données (PGD)}
+\begin{lienbox}{Lien du livrable}
+PGD (2 pages, modèle DMP OPIDoR) :
+\href{https://github.com/JihanElkhattabi/rugulopteryx-okamurae-these/blob/main/docs/PGD_Rugulopteryx_okamurae.pdf}{docs/PGD\_Rugulopteryx\_okamurae.pdf}\\
+Outil de rédaction : \href{https://dmp.opidor.fr}{dmp.opidor.fr} (DMPRoadmap)
+\end{lienbox}
+
+Le plan de gestion des données a été rédigé selon le \textbf{modèle DMP OPIDoR},
+l'instance française de la plateforme DMPRoadmap recommandée par le HCERES. Il
+s'articule autour de six sections qui couvrent l'intégralité du cycle de vie des
+données de la thèse :
+
+\begin{enumerate}[leftmargin=1.5em, itemsep=1pt]
+  \item \textbf{Description des données} : trois familles -- échantillonnage
+        (fiches terrain géoréférencées, photographies), analytiques (HPLC-DAD,
+        HR-ESI-MS, RMN \textsuperscript{1}H/\textsuperscript{13}C, bioessais) et
+        dérivées (tables, structures, figures) ; volume estimé 5--15~Go.
+  \item \textbf{Normes \& métadonnées} : formats natifs conservés (FID, \texttt{.lcd},
+        \texttt{.mzML}, \texttt{.csv}) ; standards Darwin Core (occurrences) et ISA-Tab
+        (métabolomique) ; nomenclature normalisée des fichiers.
+  \item \textbf{Stockage \& sécurité} : NAS du laboratoire avec sauvegarde nocturne,
+        versionnement Git, chiffrement AES-256 des données sensibles, règle 3-2-1.
+  \item \textbf{Partage \& dépôt} : Nakala (Huma-Num) et Zenodo avec DOI persistant,
+        licence CC-BY-4.0, embargo maximal 12~mois pour les données brevetables.
+  \item \textbf{Éthique \& légal} : respect du Code de la pêche maritime (loi 19-12),
+        autorisations pour les aires protégées (parc national d'Al~Hoceima).
+  \item \textbf{Responsabilités \& cycle de vie} : rôles doctorante / directeur /
+        référent données ; révision annuelle ; archivage $\geq$~10~ans.
+\end{enumerate}
+
+Le PGD est joint au dépôt Git (dossier \texttt{docs/}) et sera importé dans OPIDoR
+pour bénéficier de la version interactive et des modèles nationaux.
+
+% ===================== LIVRABLE 4 =====================
+\section{Livrable 4 -- Dépôt Git}
+\begin{lienbox}{Lien du livrable}
+Dépôt :
+\href{https://github.com/JihanElkhattabi/rugulopteryx-okamurae-these}{github.com/JihanElkhattabi/rugulopteryx-okamurae-these}
+\end{lienbox}
+
+Le dépôt Git, désormais \textbf{en ligne} sur GitHub, héberge le socle versionné de
+l'écosystème. Il a été structuré selon une \textbf{arborescence claire}, accompagnée
+d'un fichier \texttt{README.md} décrivant l'objectif, la structure, les livrables et
+la licence, d'un fichier \texttt{.gitignore} excluant les fichiers de compilation et
+les données brutes volumineuses, et d'un fichier \texttt{CITATION.cff} fournissant les
+métadonnées de citation (compatibles Zenodo) :
+
+\begin{center}
+\begin{minipage}{0.94\linewidth}
+\small\ttfamily
+rugulopteryx-okamurae-these/\\
+\quad\textbar-- README.md \;\textperiodcentered\; LICENSE \;\textperiodcentered\; .gitignore \;\textperiodcentered\; CITATION.cff\\
+\quad\textbar-- references.bib \;\textperiodcentered\; Charte\_IA.md\\
+\quad\textbar-- docs/ \;\textbackslash\; PGD \;\textperiodcentered\; Rapport \;\textperiodcentered\; Guide\_GitHub.pdf\\
+\quad\textbar-- data/ \;\textbackslash\; exemple\_metabolites.csv \;\textperiodcentered\; README.md\\
+\quad\textbar-- scripts/ \;\textbackslash\; analyse\_phytochimique.py \;\textperiodcentered\; README.md\\
+\quad\textbackslash-- results/ \;\textbackslash\; statistiques\_par\_classe.csv \;\textperiodcentered\; aire\_pic\_par\_compose.png \;\textperiodcentered\; README.md
+\end{minipage}
+\end{center}
+
+La \textbf{licence} est double : CC-BY-4.0 pour les contenus (documents, données,
+bibliographie) et MIT pour les scripts. Le dépôt contient un \textbf{script
+d'analyse d'exemple} (\texttt{analyse\_phytochimique.py}), testé et fonctionnel, qui
+lit un jeu de métabolites, calcule des statistiques par classe/site et génère une
+figure. L'\textbf{historique} compte \textbf{huit commits} significatifs, traduisant
+une démarche incrémentale et tracée :
+
+\begin{itemize}
+  \item \texttt{aeced97} -- Initialisation du dépôt (README, LICENSE, .gitignore) ;
+  \item \texttt{2cfa4e4} -- Structuration de l'arborescence + \texttt{references.bib} (22 réf.) ;
+  \item \texttt{7c79f29} -- Ajout de la charte personnelle d'usage de l'IA ;
+  \item \texttt{17febc1} -- Ajout du PGD dans \texttt{docs/} ;
+  \item \texttt{43bc509} -- Ajout du rapport final dans \texttt{docs/} + mise à jour du README ;
+  \item \texttt{dcbb110} -- Fichiers d'exemple (data CSV, script, \texttt{results/}) + \texttt{CITATION.cff} ;
+  \item \texttt{6cc3f22} -- README à jour (arborescence complète) + sorties d'exemple du script ;
+  \item \texttt{907c2d9} -- Ajout du guide pas-à-pas de création du dépôt GitHub.
+\end{itemize}
+
+Le dépôt, désormais \textbf{poussé sur GitHub}, constitue la cible unique de
+versionnement du code d'analyse phytochimique, des tables traitées et des scripts de
+génération de figures, avec un \textbf{taggage de version} (\texttt{v0.1},
+\texttt{v1.0}) à chaque jalon de la thèse et un archivage DOI via Zenodo.
+
+% ===================== LIVRABLE 5 =====================
+\section{Livrable 5 -- Test et charte IA}
+\begin{lienbox}{Lien du livrable}
+Charte personnelle d'usage de l'IA :
+\href{https://github.com/JihanElkhattabi/rugulopteryx-okamurae-these/blob/main/Charte_IA.md}{Charte\_IA.md}
+\end{lienbox}
+
+\subsection*{Bilan de l'activité 2 (test d'un assistant IA)}
+Lors de l'activité~2, j'ai soumis à un assistant conversationnel une requête sur les
+composés bioactifs de \textit{R.~okamurae}. L'outil a produit un texte structuré et
+plausible, mais l'examen critique a révélé trois limites majeures : (i)~\textbf{références
+inventées} -- trois articles sur cinq n'existaient dans aucune base (Crossref, PubMed) ;
+(ii)~\textbf{structures chimiques erronées} -- un diterpénoïde attribué à tort à la
+classe des spatanes ; (iii)~\textbf{sources invérifiables} pour les dosages en
+phlorotannines. Ce test confirme que l'IA est utile pour la formulation et la
+synthèse, mais ne saurait remplacer la lecture critique des sources primaires.
+
+\subsection*{Charte personnelle d'usage (résumé)}
+Je m'engage à respecter six principes : (1)~\textbf{transparence} -- signaler tout
+passage rédigé avec une IA, en nommant l'outil et la date ; (2)~\textbf{vérification
+systématique} des références, chiffres et structures dans une source primaire ;
+(3)~\textbf{aucune donnée fabriquée} -- retirer toute mention non contrôlée ;
+(4)~\textbf{respect de la propriété intellectuelle} -- citer selon les normes en
+vigueur ; (5)~\textbf{protection des données sensibles} -- ne jamais transmettre de
+résultats non publiés à un outil tiers ; (6)~\textbf{responsabilité} -- rester seule
+garante du contenu scientifique. Le texte intégral de la charte figure dans
+\texttt{Charte\_IA.md}.
+
+% ===================== CONCLUSION =====================
+\section{Conclusion et perspectives}
+L'écosystème numérique mis en place autour de ma thèse sur \textit{Rugulopteryx
+okamurae} repose sur cinq briques interconnectées : un \textbf{identifiant ORCID}
+qui me relie durablement à mes productions, une \textbf{bibliothèque Zotero} de
+22~références vérifiées et exportables, un \textbf{plan de gestion des données}
+conforme au modèle OPIDoR, un \textbf{dépôt Git} versionné et clairement structuré,
+et une \textbf{charte d'usage de l'IA} traduisant un engagement responsable. Ces
+outils ne fonctionnent pas en silos : l'ORCID alimente les dépôts, le PGD oriente
+le versionnement Git, Zotero fournit la bibliographie du rapport, et la charte IA
+encadre l'usage de tous les outils génératifs mobilisés. Cet écosystème évoluera
+avec la thèse -- nouvelles références, nouveaux jeux de données, nouvelles versions
+-- mais son squelette est désormais en place et reproductible.
+
+En termes de \textbf{perspectives}, plusieurs actions prolongeront ce socle dès le
+début du travail expérimental. La bibliothèque Zotero sera enrichie au rythme des
+lectures, avec une veille automatisée sur les mots-clés «~\textit{Rugulopteryx}~»
+et «~Dictyotales~» via les flux RSS de PubMed et Scopus. Le dépôt Git accueillera
+les scripts d'analyse phytochimique (extraction chromatographique, traitement RMN,
+figures), chaque jalon étant marqué par un tag de version. Le PGD sera révisé
+annuellement et son contenu importé dans l'instance OPIDoR pour bénéficier des
+modèles nationaux et de l'interopérabilité avec les entrepôts Nakala et Zenodo,
+où les données analytiques seront déposées avec un DOI persistant. Enfin, la charte
+IA sera actualisée à mesure que de nouveaux usages émergeront (assistance à la
+rédaction, analyse de spectres), afin de maintenir un équilibre entre efficacité
+et intégrité scientifique. Les références mobilisées (22~au total) sont listées,
+organisées par mots-clés et vérifiées dans le fichier
+\href{https://github.com/JihanElkhattabi/rugulopteryx-okamurae-these/blob/main/references.bib}{\texttt{references.bib}}
+(livrable~2), auquel le présent rapport renvoie.
+
+\label{LastPage}
+\end{document}
